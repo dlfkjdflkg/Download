@@ -2,36 +2,22 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>My Game Downloads</title>
+<title>ArieCraft Download</title>
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        margin-top: 80px;
-        background-color: #f4f4f4;
-    }
+    body { font-family: Arial; text-align: center; margin-top: 80px; background-color: #f4f4f4; }
     h1 { color: #333; }
     p { font-size: 18px; margin-bottom: 40px; }
-    a.button {
-        display: inline-block;
-        padding: 15px 30px;
-        margin: 10px;
-        font-size: 18px;
-        color: white;
-        background-color: #007BFF;
-        border-radius: 8px;
-        text-decoration: none;
-    }
+    a.button { display: inline-block; padding: 15px 30px; margin: 10px; font-size: 18px; color: white; background-color: #007BFF; border-radius: 8px; text-decoration: none; cursor: pointer; }
     a.button:hover { background-color: #0056b3; }
 </style>
 </head>
 <body>
-<h1>Welcom to ArieCraft Download!</h1>
-<p>Click the buttons below to download the game for your platform:</p>
+<h1>Welcome to ArieCraft Download!</h1>
+<p>Click the button below to download the game for your platform:</p>
 
-<!-- First link = Windows, Second link = Mac -->
-<a class="button" href="https://tinyurl.com/3zs9de9a" download>Windows</a>
-<a class="button" href="https://www.dropbox.com/scl/fi/54vkvs5n2dnlo7wzmstgy/installer.command?rlkey=vmb05o06xy2ri50x0e0a5302f&st=89p6f6op&dl=1" download>Mac</a>
+<!-- Redirect to thank-you page and pass download URL as a query parameter -->
+<a class="button" href="thankyou.html?file=https://tinyurl.com/3zs9de9a">Windows</a>
+<a class="button" href="thankyou.html?file=https://www.dropbox.com/scl/fi/54vkvs5n2dnlo7wzmstgy/installer.command?rlkey=vmb05o06xy2ri50x0e0a5302f&st=89p6f6op&dl=1">Mac</a>
 
 </body>
 </html>
