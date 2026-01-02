@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Thank You!</title>
+<style>
+    body { font-family: Arial; text-align: center; margin-top: 100px; background-color: #f4f4f4; }
+    h1 { color: #333; }
+    p { font-size: 20px; margin-bottom: 30px; }
+</style>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        // Get the download URL from query parameter
+        const params = new URLSearchParams(window.location.search);
+        const fileUrl = params.get('file');
+        if (fileUrl) {
+            // Trigger download automatically
+            const a = document.createElement('a');
+            a.href = fileUrl;
+            a.download = '';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    });
+</script>
+</head>
+<body>
+<h1>Thank You for Downloading ArieCraft!</h1>
+<p>Your download should start automatically. If it doesn’t, <a id="manual-link" href="#">click here</a>.</p>
+
+<script>
+    // Update manual link in case auto-download fails
+    const params = new URLSearchParams(window.location.search);
+    const fileUrl = params.get('file');
+    if (fileUrl) {
+        document.getElementById('manual-link').href = fileUrl;
+    }
+</script>
+
+</body>
+</html>
