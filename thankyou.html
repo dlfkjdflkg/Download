@@ -13,25 +13,31 @@
         // Get the download URL from query parameter
         const params = new URLSearchParams(window.location.search);
         const fileUrl = params.get('file');
-        if (fileUrl) {
-            // Trigger the download automatically
-            const a = document.createElement('a');
-            a.href = fileUrl;
-            a.download = '';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
 
-            // Optional: For browsers that block auto-download, provide a manual link
-            const manualLink = document.getElementById('manual-link');
-            if (manualLink) {
-                manualLink.href = fileUrl;
-            }
+        // Show the page first
+        document.body.style.visibility = 'visible';
+
+        if (fileUrl) {
+            // Delay the download slightly so page can render
+            setTimeout(() => {
+                const a = document.createElement('a');
+                a.href = fileUrl;
+                a.download = '';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+
+                // Optional: update manual link
+                const manualLink = document.getElementById('manual-link');
+                if (manualLink) {
+                    manualLink.href = fileUrl;
+                }
+            }, 500); // half a second delay
         }
     });
 </script>
 </head>
-<body>
+<body style="visibility:hidden;">
 <h1>Thank You for Downloading ArieCraft!</h1>
 <p>Your download should start automatically. If it doesn’t, <a id="manual-link" href="#">click here</a>.</p>
 
